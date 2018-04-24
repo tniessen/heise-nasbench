@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7FFC100-780C-4232-B767-4028632966AA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nasbench</RootNamespace>
+    <AssemblyName>nasbench</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ctlogotrans64.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BenchmarkDoneDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BenchmarkDoneDialog.Designer.cs">
+      <DependentUpon>BenchmarkDoneDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppContext.cs" />
+    <Compile Include="BenchmarkProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BenchmarkProgressDialog.Designer.cs">
+      <DependentUpon>BenchmarkProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionDialog.Designer.cs">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drives.cs" />
+    <Compile Include="LogFileEventsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LogFileEventsControl.Designer.cs">
+      <DependentUpon>LogFileEventsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogFileNameInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogFileNameInputDialog.Designer.cs">
+      <DependentUpon>LogFileNameInputDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogFile.cs" />
+    <Compile Include="LogFileFileTreeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LogFileFileTreeControl.Designer.cs">
+      <DependentUpon>LogFileFileTreeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogFileSummaryBoxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LogFileSummaryBoxControl.Designer.cs">
+      <DependentUpon>LogFileSummaryBoxControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogFileSummaryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LogFileSummaryControl.Designer.cs">
+      <DependentUpon>LogFileSummaryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogFileViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogFileViewerForm.Designer.cs">
+      <DependentUpon>LogFileViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NativeBenchmark.cs" />
+    <Compile Include="LogBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LogBox.Designer.cs">
+      <DependentUpon>LogBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogicalDriveDropdownList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LogicalDriveDropdownList.Designer.cs">
+      <DependentUpon>LogicalDriveDropdownList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PathTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PathTextBox.Designer.cs">
+      <DependentUpon>PathTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Performance.cs" />
+    <Compile Include="PerformanceGraphView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PerformanceGraphView.Designer.cs">
+      <DependentUpon>PerformanceGraphView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Units.cs" />
+    <Compile Include="WinForms.cs" />
+    <EmbeddedResource Include="BenchmarkDoneDialog.resx">
+      <DependentUpon>BenchmarkDoneDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BenchmarkProgressDialog.resx">
+      <DependentUpon>BenchmarkProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionDialog.resx">
+      <DependentUpon>ConnectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogFileEventsControl.resx">
+      <DependentUpon>LogFileEventsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogFileNameInputDialog.resx">
+      <DependentUpon>LogFileNameInputDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogBox.resx">
+      <DependentUpon>LogBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogFileFileTreeControl.resx">
+      <DependentUpon>LogFileFileTreeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogFileSummaryBoxControl.resx">
+      <DependentUpon>LogFileSummaryBoxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogFileSummaryControl.resx">
+      <DependentUpon>LogFileSummaryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogFileViewerForm.resx">
+      <DependentUpon>LogFileViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogicalDriveDropdownList.resx">
+      <DependentUpon>LogicalDriveDropdownList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PathTextBox.resx">
+      <DependentUpon>PathTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ctlogotrans64.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
